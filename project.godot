@@ -46,6 +46,7 @@ config/icon="res://icon.png"
 
 SceneChanger="*res://objects/Scene Changer.tscn"
 PlayerUI="*res://objects/Player UI.tscn"
+GlobalMusicPlayer="*res://objects/GlobalMusicPlayer.tscn"
 
 [display]
 
