@@ -29,19 +29,20 @@ func updateSpeed():
 		vel.x += moveSpeed
 		
 func updateAnimation():	
-	if vel.x > 0:
+	if vel.x > 0 and vel.y == 0:
 		sprite.animation = 'walkRight'
 		lastDir = 0
-	elif vel.x < 0:
+	elif vel.x < 0 and vel.y == 0:
 		sprite.animation = 'walkLeft'
 		lastDir = 2
-	elif vel.y > 0:
+	
+	if vel.y > 0 and vel.x == 0:
 		sprite.animation = 'walkDown'
 		lastDir = 1
-	elif vel.y < 0:
+	elif vel.y < 0 and vel.x == 0:
 		sprite.animation = 'walkUp'
 		lastDir = 3
-		
+	
 	if vel.x == 0 and vel.y == 0:
 		if lastDir == 0:
 			sprite.animation = 'standRight'
