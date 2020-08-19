@@ -23,5 +23,6 @@ tile_data = PoolIntArray( 14, 0, 0, 15, 0, 0, 22, 0, 0, 28, 0, 0, 29, 0, 0, 6553
 
 [node name="Chest" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1280, 512 )
+storableType = "key"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

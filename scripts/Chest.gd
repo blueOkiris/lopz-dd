@@ -3,6 +3,7 @@ extends StaticBody2D
 class_name Chest
 
 export(String) var id = 'chest'
+export(String) var storableType = 'storable'
 
 var sprite : AnimatedSprite
 
@@ -19,11 +20,21 @@ func _ready():
 		alreadyOpen = true;
 		sprite.animation = 'alreadyOpen'
 
+func touchStorable():
+	if storableType == 'key':
+		var newKey = Key.new()		
+		newKey.id = id + '_key'
+		newKey._ready()
+		newKey._onTouch()
+		newKey.queue_free()
+
 func _process(_delta):
 	if alreadyOpen:
 		sprite.animation = 'alreadyOpen'
 	elif SceneChanger.chestIsOpens[id]:
 		sprite.animation = 'open'
+		touchStorable()
+		alreadyOpen = true
 	elif canOpen and Input.is_action_just_pressed('interact'):
 		SceneChanger.chestIsOpens[id] = true
 		canOpen = false

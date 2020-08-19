@@ -2,6 +2,8 @@ extends Area2D
 
 class_name Storable
 
+export(Array) var types = [ 'key' ]
+
 export(String) var id = 'storable'
 
 func _ready():
