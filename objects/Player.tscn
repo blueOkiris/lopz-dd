@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/link-minish.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://audio/footsteps.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 32.0
@@ -13,10 +14,13 @@ script = ExtResource( 2 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 4, 0 )
 frames = ExtResource( 1 )
-animation = "standDown"
-frame = 16
+animation = "walkRight"
+frame = 5
 playing = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 8 )
 shape = SubResource( 1 )
+
+[node name="FootstepsSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

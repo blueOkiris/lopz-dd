@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var sprite : AnimatedSprite
 var collider : CollisionShape2D
+var footsteps : AudioStreamPlayer
 
 var vel : Vector2 = Vector2(0, 0)
 var moveSpeed : int = 350
@@ -13,6 +14,7 @@ func _ready():
 	
 	sprite = $Sprite
 	collider = $Collider
+	footsteps = $FootstepsSfx
 
 func updateSpeed():
 	vel = Vector2(0, 0)
@@ -53,8 +55,16 @@ func updateAnimation():
 		elif lastDir == 3:
 			sprite.animation = 'standUp'
 
+func soundEffects():
+	if vel.x != 0 or vel.y != 0:
+		if not footsteps.playing:
+			footsteps.play()
+	else:
+		footsteps.stop()
+
 func _physics_process(_delta):
 	updateSpeed()
 	vel = move_and_slide(vel)
 	
 	updateAnimation()
+	soundEffects()
