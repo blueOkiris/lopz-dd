@@ -10,6 +10,7 @@ margin_left = 896.0
 margin_top = 512.0
 margin_right = 1024.0
 margin_bottom = 576.0
+action_mode = 0
 text = "Test Level"
 __meta__ = {
 "_edit_use_anchors_": false

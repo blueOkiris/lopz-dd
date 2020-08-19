@@ -10,6 +10,7 @@ margin_left = 704.0
 margin_top = 480.0
 margin_right = 832.0
 margin_bottom = 544.0
+action_mode = 0
 text = "Play Level"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -20,6 +21,7 @@ margin_left = 1088.0
 margin_top = 480.0
 margin_right = 1216.0
 margin_bottom = 544.0
+action_mode = 0
 text = "Create Levels"
 __meta__ = {
 "_edit_use_anchors_": false
