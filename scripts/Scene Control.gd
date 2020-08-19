@@ -6,6 +6,7 @@ var animation : AnimationPlayer
 var black : ColorRect
 
 var playerPos : Vector2 = Vector2(448, 256)
+var playerDir : int = 1
 var chestIsOpens = {}
 
 func _ready():
@@ -29,6 +30,7 @@ func _on_Left_body_entered(body):
 	if body.get_name() == "Player":
 		playerPos.x = 1920 - 128
 		playerPos.y = body.get_position().y
+		playerDir = 2
 		
 		if get_tree().get_current_scene().get_name() == "Test Level 2":
 			changeScene("res://scenes/Test Level.tscn", 0)
@@ -37,6 +39,7 @@ func _on_Right_body_entered(body):
 	if body.get_name() == "Player":
 		playerPos.x = 128
 		playerPos.y = body.get_position().y
+		playerDir = 0
 		
 		if get_tree().get_current_scene().get_name() == "Test Level":
 			changeScene("res://scenes/Test Level 2.tscn", 0)

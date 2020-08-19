@@ -3,7 +3,7 @@
 [ext_resource path="res://sprites/block.tres" type="TileSet" id=1]
 
 [node name="DungeonTiles" type="TileMap"]
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 640, 640 )
+cell_size = Vector2( 32, 32 )
 format = 1
