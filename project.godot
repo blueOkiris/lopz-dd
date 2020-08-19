@@ -8,9 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "Chest",
+"language": "GDScript",
+"path": "res://scripts/Chest.gd"
+}, {
+"base": "Storable",
+"class": "Key",
+"language": "GDScript",
+"path": "res://scripts/Key.gd"
+}, {
+"base": "YSort",
+"class": "LevelBase",
+"language": "GDScript",
+"path": "res://scripts/LevelRoom.gd"
+}, {
+"base": "Area2D",
+"class": "Storable",
+"language": "GDScript",
+"path": "res://scripts/Storable.gd"
+} ]
 _global_script_class_icons={
-
+"Chest": "",
+"Key": "",
+"LevelBase": "",
+"Storable": ""
 }
 
 [application]
@@ -22,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SceneChanger="*res://objects/Scene Changer.tscn"
+PlayerUI="*res://objects/Player UI.tscn"
 
 [display]
 

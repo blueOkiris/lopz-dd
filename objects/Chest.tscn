@@ -11,12 +11,13 @@ extents = Vector2( 48, 16 )
 
 [node name="Chest" type="StaticBody2D"]
 script = ExtResource( 2 )
+id = "key_chest"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -32 )
 scale = Vector2( 1.48462, 1.52128 )
 frames = ExtResource( 1 )
-animation = "closed"
+animation = "alreadyOpen"
 playing = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]

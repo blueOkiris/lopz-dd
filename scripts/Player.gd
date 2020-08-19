@@ -16,41 +16,41 @@ func _ready():
 
 func updateSpeed():
 	vel = Vector2(0, 0)
-	if Input.is_action_pressed("move_link_up"):
+	if Input.is_action_pressed('move_link_up'):
 		vel.y -= moveSpeed
 	#
-	if Input.is_action_pressed("move_link_down"):
+	if Input.is_action_pressed('move_link_down'):
 		vel.y += moveSpeed
 	#
-	if Input.is_action_pressed("move_link_left"):
+	if Input.is_action_pressed('move_link_left'):
 		vel.x -= moveSpeed
 	#
-	if Input.is_action_pressed("move_link_right"):
+	if Input.is_action_pressed('move_link_right'):
 		vel.x += moveSpeed
 		
 func updateAnimation():	
 	if vel.x > 0:
-		sprite.animation = "walkRight"
+		sprite.animation = 'walkRight'
 		lastDir = 0
 	elif vel.x < 0:
-		sprite.animation = "walkLeft"
+		sprite.animation = 'walkLeft'
 		lastDir = 2
 	elif vel.y > 0:
-		sprite.animation = "walkDown"
+		sprite.animation = 'walkDown'
 		lastDir = 1
 	elif vel.y < 0:
-		sprite.animation = "walkUp"
+		sprite.animation = 'walkUp'
 		lastDir = 3
 		
 	if vel.x == 0 and vel.y == 0:
 		if lastDir == 0:
-			sprite.animation = "standRight"
+			sprite.animation = 'standRight'
 		elif lastDir == 1:
-			sprite.animation = "standDown"
+			sprite.animation = 'standDown'
 		elif lastDir == 2:
-			sprite.animation = "standLeft"
+			sprite.animation = 'standLeft'
 		elif lastDir == 3:
-			sprite.animation = "standUp"
+			sprite.animation = 'standUp'
 
 func _physics_process(_delta):
 	updateSpeed()
