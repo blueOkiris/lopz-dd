@@ -20,3 +20,16 @@ func _on_CreateButton_pressed():
 	createBtnRef.disabled = true
 	
 	SceneChanger.changeScene('res://scenes/Level Editor.tscn', 0)
+
+
+func _on_PlayButton_mouse_entered():
+	playBtnRef.rect_scale = Vector2(1.1, 1.1)
+
+func _on_CreateButton_mouse_entered():
+	createBtnRef.rect_scale = Vector2(1.1, 1.1)
+
+func _on_PlayButton_mouse_exited():
+	playBtnRef.rect_scale = Vector2(1, 1)
+
+func _on_CreateButton_mouse_exited():
+	createBtnRef.rect_scale = Vector2(1, 1)
