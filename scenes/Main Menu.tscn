@@ -18,9 +18,9 @@ __meta__ = {
 }
 
 [node name="LINK" type="TextureRect" parent="."]
-margin_left = 768.0
+margin_left = 704.0
 margin_top = 448.0
-margin_right = 1268.0
+margin_right = 1204.0
 margin_bottom = 948.0
 rect_rotation = 10.7947
 rect_scale = Vector2( 1.25, 1.25 )
@@ -30,9 +30,9 @@ __meta__ = {
 }
 
 [node name="title" type="TextureRect" parent="."]
-margin_left = 544.0
+margin_left = 512.0
 margin_top = 32.0
-margin_right = 1687.0
+margin_right = 1655.0
 margin_bottom = 708.0
 rect_scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 5 )
@@ -55,9 +55,9 @@ __meta__ = {
 }
 
 [node name="CreateButton" type="Button" parent="."]
-margin_left = 1408.0
+margin_left = 1312.0
 margin_top = 640.0
-margin_right = 1664.0
+margin_right = 1568.0
 margin_bottom = 768.0
 rect_pivot_offset = Vector2( 128, 64 )
 custom_fonts/font = ExtResource( 4 )

@@ -15,8 +15,16 @@ func _ready():
 	black = $Control/Black
 
 func _process(_delta):
-	if Input.is_action_pressed('quit_game'):
-		get_tree().quit()
+	if Input.is_action_just_released('quit_game'):
+		var sceneName = get_tree().get_current_scene().get_name()
+		
+		if sceneName == 'Main Menu':
+			get_tree().quit()
+		elif sceneName == 'Level Select' or sceneName == 'Level Editor':
+			changeScene('res://scenes/Main Menu.tscn', 0)
+			(get_tree().get_current_scene() as CanvasLayer).layer = 0
+		else:
+			changeScene('res://scenes/Level Select.tscn', 0)
 
 func changeScene(path, delay = 0.5):
 	yield(get_tree().create_timer(delay), 'timeout')
