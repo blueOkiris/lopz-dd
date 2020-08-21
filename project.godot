@@ -45,7 +45,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Legend of Paper Zelda - DungeonDesigner"
-run/main_scene="res://scenes/Test Level.tscn"
+run/main_scene="res://scenes/Main Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
