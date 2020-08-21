@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Door",
 "language": "GDScript",
-"path": "res://Door.gd"
+"path": "res://scripts/Door.gd"
 }, {
 "base": "Storable",
 "class": "Key",

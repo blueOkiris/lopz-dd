@@ -31,7 +31,7 @@ func changeScene(path, delay = 0.5):
 	yield(get_tree().create_timer(delay), 'timeout')
 	animation.play('fade')
 	yield(animation, 'animation_finished')
-	assert(get_tree().change_scene(path) == OK)
+	get_tree().change_scene(path)
 	animation.play_backwards('fade')
 	yield(animation, 'animation_finished')
 	emit_signal('scene_changed')
