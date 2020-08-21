@@ -41,34 +41,32 @@ script = ExtResource( 1 )
 type = "locked"
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -128 )
+position = Vector2( 0, -64 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "locked"
 playing = true
 
 [node name="Trigger" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -80 )
+position = Vector2( 0, -16 )
 shape = SubResource( 4 )
 
 [node name="Collider" type="StaticBody2D" parent="."]
-position = Vector2( 0, -64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
 position = Vector2( 0, -48 )
 shape = SubResource( 5 )
 
 [node name="LeftCollider" type="StaticBody2D" parent="."]
-position = Vector2( 0, -64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollider"]
 position = Vector2( -52, -48 )
 shape = SubResource( 6 )
 
 [node name="RightCollider" type="StaticBody2D" parent="."]
-position = Vector2( 0, -64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider"]
 position = Vector2( 52, -48 )
 shape = SubResource( 7 )
 [connection signal="body_entered" from="." to="." method="_on_LockedDoor_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_LockedDoorUp_body_exited"]

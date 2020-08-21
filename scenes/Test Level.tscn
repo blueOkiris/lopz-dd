@@ -31,9 +31,9 @@ tile_data = PoolIntArray( 65538, 7, 0, 65539, 6, 0, 65540, 7, 0, 65541, 6, 0, 65
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="LockedDoorUp" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1280, 256 )
+position = Vector2( 1280, 208 )
 id = "locked-door-1"
 
 [node name="LockedDoorUp2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 640, 1088 )
+position = Vector2( 640, 1120 )
 id = "locked-door-2"
