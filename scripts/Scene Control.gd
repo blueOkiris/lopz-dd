@@ -9,6 +9,7 @@ var playerPos : Vector2 = Vector2(448, 256)
 var playerDir : int = 1
 var chestIsOpens = {}
 var storables = {}
+var doors = {}
 
 func _ready():
 	animation = $AnimationPlayer
@@ -60,7 +61,7 @@ func _on_Right_body_entered(body):
 func _on_Top_body_entered(body):
 	if body.get_name() == 'Player':
 		playerPos.x = body.get_position().x
-		playerPos.y = 1080 - 128
+		playerPos.y = 1080 - 160
 		playerDir = 3
 		
 		if get_tree().get_current_scene() is LevelBase:
@@ -71,8 +72,8 @@ func _on_Top_body_entered(body):
 func _on_Bottom_body_entered(body):
 	if body.get_name() == 'Player':
 		playerPos.x = body.get_position().x
-		playerPos.y = 128
-		playerDir = 2
+		playerPos.y = 160
+		playerDir = 1
 		
 		if get_tree().get_current_scene() is LevelBase:
 			var level : LevelBase = get_tree().get_current_scene() as LevelBase

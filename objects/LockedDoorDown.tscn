@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/LockedDoor.gd" type="Script" id=1]
+[ext_resource path="res://images/locked-door-minish.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "unlocked",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "locked",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 64, 16 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 40, 16 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 12, 16 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 12, 16 )
+
+[node name="LockedDoorUp" type="Area2D"]
+script = ExtResource( 1 )
+type = "locked"
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 7.62939e-06, -128 )
+rotation = 3.14159
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "locked"
+playing = true
+
+[node name="Trigger" type="CollisionShape2D" parent="."]
+position = Vector2( 7.62939e-06, -208 )
+shape = SubResource( 4 )
+
+[node name="Collider" type="StaticBody2D" parent="."]
+position = Vector2( 7.62939e-06, -192 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+position = Vector2( 0, 16 )
+shape = SubResource( 5 )
+
+[node name="LeftCollider" type="StaticBody2D" parent="."]
+position = Vector2( 7.62939e-06, -192 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollider"]
+position = Vector2( -52, 16 )
+shape = SubResource( 6 )
+
+[node name="RightCollider" type="StaticBody2D" parent="."]
+position = Vector2( 7.62939e-06, -192 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollider"]
+position = Vector2( 52, 16 )
+shape = SubResource( 7 )
+[connection signal="body_entered" from="." to="." method="_on_LockedDoor_body_entered"]

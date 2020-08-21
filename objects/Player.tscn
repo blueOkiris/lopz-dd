@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 position = Vector2( 4, 0 )
 frames = ExtResource( 1 )
 animation = "walkRight"
-frame = 5
+frame = 9
 playing = true
 
 [node name="Collider" type="CollisionShape2D" parent="."]
